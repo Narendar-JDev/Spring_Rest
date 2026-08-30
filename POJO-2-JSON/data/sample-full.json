@@ -1,0 +1,15 @@
+{
+	"id": 10,
+	"firstName": "Vivek",
+	"lastName": "Lone",
+	"active": true,
+	"address": {
+		"street": "25/2",
+		"city": "Titwala Mumbai",
+		"state": "Maharashtra",
+		"zip": "657890",
+		"country": "IND"
+	},
+	"languages" : ["Java", "C", "Python", "Javascript"],
+	"Company":"IBM"	
+}
