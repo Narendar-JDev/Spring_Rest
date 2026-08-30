@@ -1,0 +1,15 @@
+{
+	"id"       :        10,
+	"firstName": "Shrikant",
+	"lastName ": "Chalak",
+	"active": true,
+	"address": {
+		"street": "25/1",
+		"city": "Pune",
+		"state": "Maharashtra",
+		"zip": "560026",
+		"country": "IND"
+	},
+	"languages" : ["Java", "C#", "Python", "Javascript"],
+	"Company":"Experies IT"	
+}
