@@ -50,44 +50,44 @@ public class TouristMgmtServiceImpl implements ITourisMgmtService {
 		return repo.findById(id)
 				.orElseThrow(() -> new TouristNotFoundException("tourist with id :: " + id + " not found"));
 	}
-//
-//	@Override
-//	public String updateTouristByDetails(Tourist tourist) {
-//
-//		Optional<Tourist> optional = repo.findById(tourist.getTid());
-//		if (optional.isPresent()) {
-//			repo.save(tourist); // save() performs both insert and update depends on id value
-//			return "Tourist with the id ::" + tourist.getTid() + " updated";
-//		} else {
-//			throw new TouristNotFoundException(
-//					"tourist with the id:: " + tourist.getTid() + " not available for updation");
-//		}
-//	}
-//
-//	@Override
-//	public String updateTouristById(Integer id, Float hikePercent) {
-//
-//		Optional<Tourist> optional = repo.findById(id);
-//		if (optional.isPresent()) {
-//			Tourist tourist = optional.get();
-//			tourist.setBudget(tourist.getBudget() + (tourist.getBudget() * (hikePercent / 100)));
-//			repo.save(tourist);
-//			return "Tourist budget is updated for the id :: " + tourist.getTid();
-//		} else {
-//			throw new TouristNotFoundException("Tourist not found for the id " + id);
-//		}
-//
-//	}
-//
-//	@Override
-//	public String deleteTouristById(Integer id) {
-//		Optional<Tourist> optional = repo.findById(id);
-//		if (optional.isPresent()) {
-//			repo.delete(optional.get());
-//			return "Tourist with the id :: " + id + " deleted...";
-//		} else {
-//			throw new TouristNotFoundException("Tourist not found for the id " + id);
-//		}
-//	}
+
+	@Override
+	public String updateTouristByDetails(Tourist tourist) {
+
+		Optional<Tourist> optional = repo.findById(tourist.getTid());
+		if (optional.isPresent()) {
+			repo.save(tourist); // save() performs both insert and update depends on id value
+			return "Tourist with the id ::" + tourist.getTid() + " updated";
+		} else {
+			throw new TouristNotFoundException(
+					"tourist with the id:: " + tourist.getTid() + " not available for updation");
+		}
+	}
+
+	@Override
+	public String updateTouristById(Integer id, Float hikePercent) {
+
+		Optional<Tourist> optional = repo.findById(id);
+		if (optional.isPresent()) {
+			Tourist tourist = optional.get();
+			tourist.setBudget(tourist.getBudget() + (tourist.getBudget() * (hikePercent / 100)));
+			repo.save(tourist);
+			return "Tourist budget is updated for the id :: " + tourist.getTid();
+		} else {
+			throw new TouristNotFoundException("Tourist not found for the id " + id);
+		}
+
+	}
+
+	@Override
+	public String deleteTouristById(Integer id) {
+		Optional<Tourist> optional = repo.findById(id);
+		if (optional.isPresent()) {
+			repo.delete(optional.get());
+			return "Tourist with the id :: " + id + " deleted...";
+		} else {
+			throw new TouristNotFoundException("Tourist not found for the id " + id);
+		}
+	}
 
 }

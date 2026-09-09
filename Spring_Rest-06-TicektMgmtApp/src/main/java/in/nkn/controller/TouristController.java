@@ -14,9 +14,12 @@ import in.nkn.dao.ITouristRepo;
 import in.nkn.model.Tourist;
 import in.nkn.service.ITourisMgmtService;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 
 
@@ -70,46 +73,45 @@ public class TouristController {
 		}
 	}
 	
-//   /*
-//	*  Request to modify the tourist details, object is passed to the request
-//	*/
-//	@PutMapping("/modify")
-//	public ResponseEntity<String> modifytourist(@RequestBody Tourist tourist) {
-//		try {
-//			String msg = service.updateTouristByDetails(tourist);
-//			return new ResponseEntity<String>(msg, HttpStatus.OK);
-//		} 
-//		catch (Exception e) {
-//			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-//		}
-//	}
-//
-//	@PatchMapping("/budgetModify/{id}/{hike}")
-//	public ResponseEntity<String> modifytouristBudgetById(@PathVariable("id") Integer id,
-//			@PathVariable("hike") Float hikeAmt) {
-//		try {
-//			String msg = service.updateTouristById(id, hikeAmt);
-//			return new ResponseEntity<String>(msg, HttpStatus.OK);
-//		} 
-//		catch (Exception e) {
-//			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-//		}
-//	}
-//	
-//	/*
-//	 * 	 DELETE Request: delete the tourist by id
-//	 */
-//	@DeleteMapping("/delete/{id}")
-//	public ResponseEntity<String> removeTouristById(@PathVariable("id") Integer id) {
-//		try {
-//			String msg = service.deleteTouristById(id);
-//			return new ResponseEntity<String>(msg, HttpStatus.OK);
-//		} 
-//		catch (Exception e) {
-//			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-//		}
-//	}
+   /*
+	*  Request to modify the tourist details, object is passed to the request
+	*/
+	@PutMapping("/modify")
+	public ResponseEntity<String> modifytourist(@RequestBody Tourist tourist) {
+		try {
+			String msg = service.updateTouristByDetails(tourist);
+			return new ResponseEntity<String>(msg, HttpStatus.OK);
+		} 
+		catch (Exception e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+	}
+
+	@PatchMapping("/budgetModify/{id}/{hike}")
+	public ResponseEntity<String> modifytouristBudgetById(@PathVariable("id") Integer id,
+			@PathVariable("hike") Float hikeAmt) {
+		try {
+			String msg = service.updateTouristById(id, hikeAmt);
+			return new ResponseEntity<String>(msg, HttpStatus.OK);
+		} 
+		catch (Exception e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	/*
+	 * 	 DELETE Request: delete the tourist by id
+	 */
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<String> removeTouristById(@PathVariable("id") Integer id) {
+		try {
+			String msg = service.deleteTouristById(id);
+			return new ResponseEntity<String>(msg, HttpStatus.OK);
+		} 
+		catch (Exception e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+	}
 
 	 
-
 }
